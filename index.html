@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Kevin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Kevin Web<span style="color:#ff66cc;">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#Experience">Experience</a></li>
+  </ul>
+  <a href="#contact" class="btn contact">Contact Me</a> 
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="greet">Hi, There!</p>
+    <h1>I’m <span class="highlight">Kevin Anindhito</span></h1>
+    <p class="desc">
+      I’m a student who recently graduated from SMPN 5 Sidoarjo, with a passion for modern web development using HTML, CSS, and JavaScript. I’m currently exploring more advanced technologies like Node.js, and although I’m still new to real-world experience, I’m eager to tackle both frontend and backend development. I’m committed to learning and building professional, functional web solutions.
+    </p>
+    <div class="buttons">
+      <a href="#" class="btn hire">Hire Me</a>
+      <a href="#" class="btn cv">Download CV</a>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="img/fotoku.png" alt="Foto Kevin">
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about animasi">
+  <h2>About Me</h2>
+  <h3 class="about-title">I am FullStack Developer</h3>
+  <ul class="about-info">
+    <li><strong>Experience :</strong> 1 Week</li>
+    <li><strong>Speciality :</strong> Frontend | Backend</li>
+    <li><strong>Address :</strong> Sidoarjo, East Java , Candi</li>
+    <li><strong>Email :</strong> Ilhamgx4@gmail.com</li>
+  </ul>
+</section>
+
+<section id="Experience" class="experience animasi">
+  <h2>My Experience</h2>
+  <div class="experience-container">
+    <div class="experience-card">
+      <img src="img/mc-server.gif" alt="GIF Minecraft Server" class="experience-img">
+      <h3 class="experience-title">Server Developer Minecraft</h3>
+      <p class="experience-desc">Saya pernah membuat server Minecraft dengan fitur custom plugin dan sistem manajemen pemain.</p>
+    </div>
+    <div class="experience-card">
+      <img src="img/web-dev.gif" alt="GIF Web Developer" class="experience-img">
+      <h3 class="experience-title">Web Developer</h3>
+      <p class="experience-desc">Saya mengembangkan website sederhana menggunakan HTML, CSS, dan JavaScript untuk latihan pribadi.</p>
+    </div>
+    <div class="experience-card">
+      <img src="img/game-dev.gif" alt="GIF Game Developer" class="experience-img">
+      <h3 class="experience-title">Game Developer</h3>
+      <p class="experience-desc">Saya pernah membuat game project 30 hari menggunakan Engine RPGMV.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(el => el.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+<script>
+  const reveals = document.querySelectorAll('.animasi');
+  window.addEventListener('scroll', () => {
+    reveals.forEach(item => {
+      const windowHeight = window.innerHeight;
+      const revealTop = item.getBoundingClientRect().top;
+      const revealPoint = 150;
+
+      if (revealTop < windowHeight - revealPoint) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active')
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
