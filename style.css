@@ -57,6 +57,7 @@ body {
 .btn.contact:hover {
   background-color: #ff66cc;
   color: white;
+  box-shadow: 0 0 10px #ff66cc;
 }
 
 
@@ -66,6 +67,8 @@ body {
   align-items: center;
   padding: 60px 80px;
   min-height: 100vh;
+  flex-wrap: wrap;
+  gap: 40px; 
 }
 
 .hero-text {
@@ -116,6 +119,7 @@ body {
 .hero-img img {
   max-width: 300px;
   border-radius: 20px;
+  flex: 1 1 300px;
 }
 
 .hero-text h1 {
@@ -133,8 +137,6 @@ html{
   height: 100vh;
   padding: 80px;
   color: white;
- padding-top: 100px;
- padding-bottom: 100px;
 }
 
 #home {
@@ -225,7 +227,7 @@ html{
   margin-bottom: 15px;
   object-fit: cover;
   height: 200px;
-  border-radius: 12px;
+  border-radius: 12px ;
 }
 
 .experience-title {
@@ -250,4 +252,115 @@ html{
 .animasi.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-img img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn.hire, .btn.cv {
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
+
+#contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #2E073F;
+}
+
+/* Judul */
+#contact h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#contact h2 span {
+  color: #ff66cc; /* bisa ganti ke pink neon: #ff00ff */
+}
+
+/* Form */
+#contact form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#contact input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a004e; /* WARNA BACKROUND MENGIRIM NAMA */
+  color: white;
+  margin-bottom: 20px;
+  gap: 20px;
+  max-width: 600px;
+}
+
+#contact textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color:#2a004e;         /* WARNA BACKROUND MENGIRIM PESAN */
+  color: white;
+  height: 200px; 
+  resize: none; 
+  margin-bottom: 20px;
+  gap: 20px;
+  max-width: 600px;
+}
+
+/* Tombol */
+#contact button {
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: #2a004e; /* WARNA TOMBOL */
+  color: #ff66cc;
+  margin-right: 450px;
+}
+
+/* Hover efek tombol */
+#contact button:hover {
+  background-color: #ff66cc; /* NEON TOMBOL */
+  display: block;
+  box-shadow: 0 0 10px #ff66cc;
+  transition: box-shadow 0.3 ease-in-out  ;
+  color: #dddddd;
 }

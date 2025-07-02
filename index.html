@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +7,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVIGASI BAR -->
 <nav class="navbar">
   <div class="logo">Kevin Web<span style="color:#ff66cc;">.</span></div>
   <ul class="nav-links">
@@ -19,7 +18,7 @@
   <a href="#contact" class="btn contact">Contact Me</a> 
 </nav>
 
-<!-- Hero Section -->
+<!-- HERO (TULISAN AWAL YANG MENJADI SOROTAN) -->
 <section id="home" class="hero">
   <div class="hero-text">
     <p class="greet">Hi, There!</p>
@@ -38,7 +37,7 @@
   </div>
 </section>
 
-<!-- About Section -->
+<!-- TENTANG SECTION DI ABOUTKU -->
 <section id="about" class="about animasi">
   <h2>About Me</h2>
   <h3 class="about-title">I am FullStack Developer</h3>
@@ -50,6 +49,7 @@
   </ul>
 </section>
 
+<!-- PENGALAMAN BERISI LOGIKA ANIMASI DAN PENGALAMAN KEBELET EEK -->
 <section id="Experience" class="experience animasi">
   <h2>My Experience</h2>
   <div class="experience-container">
@@ -71,10 +71,21 @@
   </div>
 </section>
 
+<!-- BLOK CONTACT SERTA LAINYA -->
+<section id="contact" class="contact animasi">
+  <h2>Contact <span>Me</span></h2>
+  <input type="text" id="name" placeholder="Your name">
+  <textarea id="message" placeholder="Write Message"></textarea>
+  <button onclick="kirimWA()">Send Message</button>
+</section>
+
+
+
+<!-- CALL JAVA + LOGIKA ANIMASI TODD -->
 <script>
   const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(link => {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function () {             // Logika animasi yang mengambil data
       navLinks.forEach(el => el.classList.remove('active'));
       this.classList.add('active');
     });
@@ -85,7 +96,7 @@
   const reveals = document.querySelectorAll('.animasi');
   window.addEventListener('scroll', () => {
     reveals.forEach(item => {
-      const windowHeight = window.innerHeight;
+      const windowHeight = window.innerHeight;                 // Logika Animasi semua berjalan mengambil data dari CSS
       const revealTop = item.getBoundingClientRect().top;
       const revealPoint = 150;
 
@@ -97,6 +108,26 @@
     });
   });
 </script>
+
+<script>
+  function kirimWA() {
+    const nama = document.getElementById("name").value.trim();
+    const pesan = document.getElementById("message").value.trim(); // Logika mengambil data ID
+
+    if (nama === "" || pesan === "") {
+      alert("Isi dulu nama dan pesan, bro!"); // Logika ketika tidak ada yang mengisi form
+      return;
+    }
+
+    const nomorWA = "6288566102718";
+    const text = `Halo, saya ${nama}. Pesan saya: ${pesan}`; // Logika Nomor Yang dituju Serta Pesan
+
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`; // Logika mengambil data nomor Wa dan text diatas
+    
+    window.open(url, "_blank");
+  }
+</script>
+
 
 </body>
 </html>
